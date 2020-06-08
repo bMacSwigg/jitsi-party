@@ -15,22 +15,11 @@ import Navigation from './Navigation.jsx'
 import { WebSocketApi } from './WebAPI.jsx'
 import LocalStorage from './LocalStorage.jsx'
 import Config from './Config.jsx'
+// import { useNotifications } from './Notifications.jsx'
 
 class Room extends Component {
-    /*
-    * A room has the following:
-    *   1. Name of room
-    *   2. Optional description
-    *   3. Content (video, art, text, etc)
-    *   4. Navigation component used to move through rooms
-    *   5. Optional artifact, i.e. something the user finds or unlocks, like a map
-    * Add new rooms to rooms.json, where individual rooms are defined. Add new TYPES of rooms
-    * by creating a new component for that room and updating the getRoomType() mapping.
-    */
     constructor(props) {
         super(props)
-
-        const { room, entered } = this.props.currentRoom
 
         this.useLocalSessions = Config.useLocalSessions || false
         
@@ -48,7 +37,7 @@ class Room extends Component {
         }
 
         this.state = {
-            room,
+            room: this.props.currentRoom.room,
             entered: false,
             users: []
         }

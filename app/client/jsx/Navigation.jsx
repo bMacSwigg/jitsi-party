@@ -6,13 +6,22 @@ import { faArrowUp, faArrowDown, faArrowLeft, faArrowRight, faMap, faCalendar } 
 import Config from './Config.jsx'
 import AudioPlayer from './AudioPlayer.jsx';
 import reducers from './reducers.jsx'
+import { NotificationContext } from './Notifications.jsx'
 
 class Navigation extends Component {
+    static contextType = NotificationContext
+
     constructor(props) {
         super(props)
 
         this.socketApi = this.props.socketApi
+
+        this.displayNotification = () => {
+            console.log('displaying')
+            this.context.add('EXAMPLE NOTIFICATION')
+        }
     }
+
 
     componentDidMount() {
         document.addEventListener("keydown", this.handleKeydown.bind(this));
@@ -88,6 +97,13 @@ class Navigation extends Component {
                             </button>
                         }
                     </div>
+                    {/* ===== TEMP ===== */}
+                    <div>
+                        <button onClick={this.displayNotification}>
+                            TEST
+                        </button>
+                    </div>
+                    {/* ===== TEMP ===== */}
                 </div>
                 <div className="column">
                     <button className="west" disabled={!west} onClick={() => onClick(west)}>
