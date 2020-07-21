@@ -5,7 +5,7 @@
 			"name": "Vestibule",
 			"type": "JITSI",
 			"description": "Welcome!",
-			"backgroundImage": "js/images/rooms/vestibule.png",
+			"backgroundImage": "js/images/rooms/vestibule.jpg", // TODO
 			"directions": {
 				"north": "livingRoom",
 				"west": "closet",
