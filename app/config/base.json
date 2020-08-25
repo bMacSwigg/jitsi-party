@@ -4,7 +4,7 @@
 	"jitsiServerUrl": "meet.jit.si",
 	"overrideJitsiServerUrlWithWindowHost": false,
 	"noJitsiServerSSL": false,
-	"useLocalSessions": true,
+	"useLocalSessions": false,
 	"moderation": {},
 	"startRoom": "vestibule",
 	"welcomePage": {
